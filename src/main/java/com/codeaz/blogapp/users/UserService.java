@@ -43,6 +43,7 @@ public class UserService {
         var userEntity = userRepository.findById(id).orElseThrow(()-> new UserNotFoundException(id));
         var user= modelMapper.map(userEntity, UserResponse.class);
         user.setToken(jwtService.generateToken(userEntity.getId()));
+        //do something here
         return user;
     }
     public UserResponse loggedinUSer(String userName, String password){
