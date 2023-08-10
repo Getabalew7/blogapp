@@ -52,6 +52,7 @@ class UsersJpaRepositoryTest {
         var user = UserEntity.builder().userName("getch")
               .email("getch@gmail.com")
               .build();
+              //just test
         userRepository.save(user);
         var oldUser = userRepository.findByUserName(user.getUserName());
         assertNotNull(oldUser);
